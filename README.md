@@ -1,6 +1,6 @@
 🚀 PeerNova — Centralized Campus Collaboration Platform
 
-PeerNova is a comprehensive digital platform designed to centralize student communication, collaboration, and resource sharing within a campus ecosystem. It solves the scattered nature of college communication by providing one unified space where students can connect, discover peers, share academic materials, engage with events, and explore opportunities—all supported by intelligent search, filtering, and personalized recommendations.
+PeerNova is a comprehensive digital platform designed to centralize student communication, collaboration, and resource sharing within campus ecosystems. It solves the fragmented nature of student interactions by providing one unified space where students can discover peers, share academic resources, join study groups, and explore campus events with intelligent search, filtering, and sorting capabilities.
 
 📌 Table of Contents
 
@@ -8,9 +8,9 @@ Overview
 
 Problem Statement
 
-Features
-
 System Architecture
+
+Key Features
 
 Tech Stack
 
@@ -26,71 +26,39 @@ Contributing
 
 License
 
-1️⃣ Overview
+🧭 Overview
 
-PeerNova aims to bring together all aspects of college interaction—academics, community, collaboration, and events—into a single, seamless platform. The platform enables students to:
+PeerNova brings together all aspects of campus interaction—community feed, peer discovery, resource sharing, events, and study groups—into a seamless digital platform.
 
-Discover peers across departments
+❗ Problem Statement
 
-Share and access academic resources
+Students face several challenges in current college ecosystems:
 
-Join or create study groups
+Fragmented Communication: Information spread across WhatsApp groups, emails, and multiple platforms.
 
-Explore campus events
+Limited Peer Discovery: Hard to discover students outside immediate classes.
 
-Communicate efficiently using a centralized feed
+Inefficient Resource Sharing: No centralized area for notes, PDFs, study files.
 
-Leverage intelligent search and filtering features
+Event Discovery Gap: Students miss campus events due to scattered announcements.
 
-2️⃣ Problem Statement
+Unorganized Collaboration: Struggles in forming study groups or coordinating projects.
 
-Students often face issues like:
+PeerNova solves these through a centralized, intelligent, and collaborative platform.
 
-❌ Fragmented Communication
-
-Information spread across WhatsApp, email, and multiple platforms.
-
-❌ Limited Peer Discovery
-
-Hard to connect with students outside one’s class or circle.
-
-❌ Inefficient Resource Sharing
-
-No centralized place to share notes, materials, or study files.
-
-❌ Event Discovery Gap
-
-College events are often missed due to poor visibility.
-
-❌ Collaboration Overhead
-
-Forming study groups or project teams is unorganized and time-consuming.
-
-✔ PeerNova solves all of these through:
-
-A centralized communication hub
-
-Intelligent search & filtering
-
-Community-driven collaboration spaces
-
-Unified resource library
-
-Engaging event discovery experience
-
-3️⃣ System Architecture
-🔄 Architecture Flow
+🏗 System Architecture
+Architecture Flow
 User (React Frontend)
         ↓
 API Gateway (Express.js Backend)
         ↓
 Business Logic Layer + Search Engine
         ↓
-MongoDB Database
+MongoDB (Database)
         ↓
 External Services (Nodemailer, Cloudinary)
 
-🔧 Technologies in Each Layer
+Technology Description
 
 Frontend: React.js, React Router, Axios
 
@@ -98,11 +66,9 @@ Backend: Node.js + Express.js
 
 Database: MongoDB (NoSQL)
 
-Authentication: JWT-based
+Authentication: JWT-based login/signup
 
-File Uploads: Cloudinary
-
-Emails: Nodemailer
+Notifications: Nodemailer for sending reminders
 
 Hosting:
 
@@ -112,92 +78,94 @@ Backend → Render / Railway
 
 Database → MongoDB Atlas
 
-🧭 Example System Flow
-User enters search → API (/api/search)
-→ MongoDB Query (filters + pagination)
-→ Sorted results returned
-→ Render on FE with infinite scroll
-→ (Optional) Email notifications triggered
+Example Flow
+User Search Query
+→ React App
+→ /api/search (Express endpoint)
+→ MongoDB Query with Filters + Pagination
+→ Sorted Results sent back
+→ Display with Infinite Scroll
+→ Optional Email Notifications triggered
 
-4️⃣ Key Features
+⭐ Key Features
 🔐 Authentication & Profiles
 
-Secure signup/login (JWT-based)
+JWT-based secure login/signup
 
 Email verification
 
-Student & Admin roles
+Student/Admin roles
 
-Editable profiles: bio, photo, department, major, interests
+Editable profiles (bio, image, department, interests, academic year)
 
 🔍 Discovery & Search
 
-Global keyword search (users, posts, groups, events)
+Global search across users, posts, groups, and events
 
-Advanced filters (department, tags, date range)
+Advanced filtering (department, category, tags, date range)
 
-Sorting (relevance, latest, popularity)
+Sorting (relevance, latest, popularity, trending)
 
 Student directory
 
 📰 Community Feed
 
-Create posts: text + images + tags
+Create posts with text, images, and tags
 
 Like, comment, share
 
-Personalized feed based on interests
+Tag-based discoverability
 
-Tagging system for discoverability
+Personalized feed based on interests
 
 👥 Study Groups
 
-Create subject-based or interest-based groups
+Create subject/project/interest-based groups
 
 Join/leave groups
 
-Group management for admins
+Group admin controls
 
-Group-specific discussion feed
+Group-specific feeds
 
 📚 Resource Sharing
 
-Upload notes, PDFs, documents (Cloudinary)
+Upload notes, PDFs, links, files (via Cloudinary)
 
-Searchable resource library
+Resource library with search + metadata
 
-Document metadata
+Popularity tracking
 
-Filters: subject, type, upload date
+Filters: subject, file type, upload date
 
 🎉 Event Hub
 
-Create and manage events
+Create hackathons, fests, workshops, seminars
 
-Browse by date, category, tags
+Event discovery by date, category, interests
 
-RSVP system
+RSVP system + reminders
 
-Email reminders
+Event filters + sorting options
 
-⚡ Performance
+⚡ Performance Optimization
 
 Infinite scroll
 
 Pagination
 
-Lazy-loaded images
+Lazy loading of media
 
 🔔 Notifications
 
 Real-time alerts
 
-Email digests
+Email digests for important updates
 
-Notification preferences
+Customizable notification preferences
 
-5️⃣ Tech Stack
-🖥 Frontend
+🧰 Tech Stack
+Frontend
 
 React.js
 
@@ -205,78 +173,71 @@ React Router
 
 TailwindCSS
 
-React Query
-
 Axios
 
-🛠 Backend
+React Query
+
+Backend
 
 Node.js
 
 Express.js
 
-Middlewares: CORS, Helmet, Rate Limiter, Compression
+CORS, Compression, Rate Limiting
 
-🗄 Database
+Database
 
 MongoDB
 
-Mongoose ORM
+Mongoose
 
-🔑 Authentication
+Authentication
 
 JWT
 
 bcryptjs
 
-🔎 Search & Filtering
+Others
 
-MongoDB Text Indexes
+Cloudinary (File Uploads)
 
-Aggregation Pipeline
+Nodemailer (Emails)
 
-☁ File & Emails
+Joi / Express-validator
 
-Cloudinary
+dotenv
 
-Nodemailer
+Swagger (API documentation)
 
-📜 Documentation
-
-Swagger / OpenAPI
-
-6️⃣ API Overview (Authentication)
+📡 API Overview (Auth)
 Endpoint	Method	Description	Access
-/api/auth/signup	POST	Register new user with email verification	Public
-/api/auth/login	POST	Authenticate user, return JWT	Public
-/api/auth/logout	POST	Logout user, invalidate token	Auth
-/api/auth/refresh	POST	Refresh expired token	Auth
-
-(Can generate full API docs if you want.)
-
-7️⃣ Installation & Setup
-🔧 Clone the repository
+/api/auth/signup	POST	Register user with email verification	Public
+/api/auth/login	POST	Login, returns JWT token	Public
+/api/auth/logout	POST	Log out user	Authenticated
+/api/auth/refresh	POST	Refresh JWT token	Authenticated
+🛠 Installation & Setup
+Clone Repository
 git clone https://github.com/your-username/peernova.git
 cd peernova
 
-📦 Install dependencies
-Backend:
+Install Dependencies
+Backend
 cd backend
 npm install
 
-Frontend:
+Frontend
 cd frontend
 npm install
 
-▶ Run Backend
+Run Backend
 npm run dev
 
-▶ Run Frontend
+Run Frontend
 npm start
 
-8️⃣ Environment Variables
+🔑 Environment Variables
 
-Create a .env file in backend:
+Create a .env file inside backend:
 
 PORT=
 MONGO_URI=
@@ -289,22 +250,23 @@ EMAIL_USER=
 EMAIL_PASS=
 FRONTEND_URL=
 
-9️⃣ Folder Structure (Backend)
+📁 Folder Structure
 /backend
-|-- src
-|   |-- config/
-|   |-- controllers/
-|   |-- routes/
-|   |-- models/
-|   |-- middleware/
-|   |-- utils/
-|   |-- index.js
-|-- package.json
+│── src/
+│   ├── config/
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── middleware/
+│   ├── utils/
+│   └── index.js
+│
+└── package.json
 
 🤝 Contributing
 
-Contributions are welcome!
-Please create a pull request and describe your changes clearly.
+Contributions are always welcome!
+Please open an issue or submit a pull request.
 
 📄 License
 
